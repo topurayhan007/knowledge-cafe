@@ -1,13 +1,13 @@
 import React from "react";
 import Bookmark from "../Bookmark/Bookmark";
 
-const BookmarksContainer = () => {
+const BookmarksContainer = ({ readTime }) => {
   return (
     <div>
       {/* Total time spent section */}
       <div className="py-5 rounded-lg border-solid border-2 border-[#6047EC] bg-purple-100 mb-6">
         <h4 className="text-xl font-bold text-[#6047EC]">
-          Spent time on read : 177 min
+          Spent time on read : {readTime} min
         </h4>
       </div>
 

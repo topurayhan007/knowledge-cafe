@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 
-const Blog = ({ blog }) => {
+const Blog = ({ blog, handleReadTime }) => {
   // console.log(blog);
   const publishDate = blog.publishDate;
 
@@ -44,7 +44,12 @@ const Blog = ({ blog }) => {
         <div>
           <p className="text-gray-400 text-lg">
             {blog.readTime / 10 < 1 ? "0" + blog.readTime : blog.readTime} min
-            read <FontAwesomeIcon className="ml-2 fa-lg" icon={faBookmark} />
+            read{" "}
+            <FontAwesomeIcon
+              className="ml-2 fa-lg"
+              onClick={() => handleReadTime(blog.readTime)}
+              icon={faBookmark}
+            />
           </p>
         </div>
       </div>
