@@ -27,11 +27,11 @@ const BlogsContainer = ({ showToastMessage }) => {
       setBookmarks(newBookmark);
     } else {
       // Show toast
-      console.log("already");
+      // console.log("already");
       showToastMessage();
     }
   };
-  console.log(bookmarks);
+  // console.log(bookmarks);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">

@@ -47,7 +47,7 @@ const Blog = ({ blog, handleReadTime, handleBookmark }) => {
             read{" "}
             <FontAwesomeIcon
               className="ml-2 fa-lg"
-              onClick={() => handleReadTime(blog.readTime)}
+              onClick={() => handleBookmark(blog.blogTitle)}
               icon={faBookmark}
             />
           </p>
@@ -67,7 +67,7 @@ const Blog = ({ blog, handleReadTime, handleBookmark }) => {
       {/* Mark as read button */}
       <h6
         className="text-purple-500 underline underline-offset-2 hover:text-purple-400 cursor-pointer text-xl font-semibold text-left"
-        onClick={() => handleBookmark(blog.blogTitle)}
+        onClick={() => handleReadTime(blog.readTime)}
       >
         Mark as read
       </h6>
