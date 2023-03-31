@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 
 const Blog = ({ blog }) => {
-  console.log(blog);
+  // console.log(blog);
   const publishDate = blog.publishDate;
 
   const formatedDate = new Date(publishDate)
