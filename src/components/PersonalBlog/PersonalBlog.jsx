@@ -84,23 +84,16 @@ const PersonalBlog = () => {
           <hr class="my-3" />
           <div class="flex items-center">
             <p class="mx-11 text-start leading-loose">
-              As we know JavaScript is a single threaded language. But the
-              language has some mechanism to run asynchronous code in parallel
-              in a non blocking manner with the help of
               <code class="bg-purple-50 p-1 rounded font-bold">
-                'Event Loop'.
-              </code>
-              The code in JavaScript are executed line by line, the functions
-              are sent to the Call Stack for execution. Whenever a asynchronous
-              function is detected, it is then sent from the Call Stack to the
-              corresponding Web APIs to run asynchronously without blocking
-              other funtions' execution. After the processing of the
-              asynchronous function is done it is forwarded to the Event Queue
-              where the
-              <code class="bg-purple-50 p-1 rounded font-bold">Event Loop</code>
-              constantly looks if there's any function ready for execution, upon
-              detection the function is then pushed to the Call Stack to
-              complete its execution.
+                'useEffect()'
+              </code>{" "}
+              is a side effect of react which is used to reach outside of the
+              react components in order to do something, like fetching an API
+              data. It is also a hook of react which accepts a function and a
+              dependency. This hook runs on every render unless you pass a
+              dependency value and it will render whenever the dependency value
+              changes. So, it can be used on timers, validating inputs, trigger
+              animation, trigger any change in the DOM.
             </p>
           </div>
         </div>
@@ -111,42 +104,20 @@ const PersonalBlog = () => {
               4
             </div>
             <p class="text-gray-800 text-lg">
-              What does <code>'React'</code> work?
+              How does <code>'React'</code> work?
             </p>
           </div>
           <hr class="my-3" />
           <div class="flex items-center">
             <p class="mx-11 text-start leading-loose">
-              The
-              <code class="bg-purple-50 p-1 rounded font-bold">
-                'quizTimer()'
-              </code>
-              function first checks whether the function's parameter is truthy
-              or not. If it is truthy then the
-              <code class="bg-purple-50 p-1 rounded font-bold">
-                'clearInterval()'
-              </code>
-              function is called to stop the ongoing timer by passing a value
-              <code class="bg-purple-50 p-1 rounded font-bold"> 'timer' </code>
-              then the
-              <code class="bg-purple-50 p-1 rounded font-bold">
-                'quizTimer()'
-              </code>
-              function returns to stop the execution of code further. If the
-              parameter is not truthy then the
-              <code class="bg-purple-50 p-1 rounded font-bold"> 'count' </code>
-              variable is taken to imitate a clock, where the floor value of
-              <code class="bg-purple-50 p-1 rounded font-bold">'count/60'</code>
-              is used to calculate minutes for the clock and
-              <code class="bg-purple-50 p-1 rounded font-bold">'count%60'</code>
-              is used to calculate seconds of the clock and show it in the
-              <code class="bg-purple-50 p-1 rounded font-bold"> h1 </code> with
-              id
-              <code class="bg-purple-50 p-1 rounded font-bold"> 'count' </code>
-              then the counter is incremented and if the counter exceeded 60
-              then they would check if the counter value is odd of even and show
-              color of the clock accordingly, this whole thing keeps repeating
-              with one second interval.
+              <code class="bg-purple-50 p-1 rounded font-bold">'React'</code>{" "}
+              uses components like functions. React takes all the elements and
+              creates a JavaScript representation of the entire DOM know as
+              vitual DOM and assigns unique key to each element to keep track,
+              whenever there's any change React uses "diffing" algorithm to
+              pinpoint which element has undergo change matching the vitual DOM
+              with the actual DOM using the keys and updates that element only
+              and re rendering it with re rendering the whole DOM.
             </p>
           </div>
         </div>
