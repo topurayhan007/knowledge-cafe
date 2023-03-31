@@ -6,6 +6,7 @@ import Header from "./components/Header/Header";
 import BlogsContainer from "./components/BlogsContainer/BlogsContainer";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import PersonalBlog from "./components/PersonalBlog/PersonalBlog";
 
 function App() {
   const showToastMessage = () => {
@@ -14,9 +15,10 @@ function App() {
     });
   };
   return (
-    <div className="App md:px-0 px-2">
+    <div className="App lg:px-0 md:px-6 px-2">
       <Header></Header>
       <BlogsContainer showToastMessage={showToastMessage}></BlogsContainer>
+      <PersonalBlog></PersonalBlog>
       <div>
         <ToastContainer />
       </div>

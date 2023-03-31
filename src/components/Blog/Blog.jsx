@@ -23,7 +23,7 @@ const Blog = ({ blog, handleReadTime, handleBookmark }) => {
         alt=""
       />
       {/* Info Section */}
-      <div className="flex items-center justify-between mt-8">
+      <div className="flex md:flex-row sm:flex-col items-center md:gap-0 gap-2 justify-between md:mt-8 mt-4">
         {/* Author Info */}
         <div className="flex gap-6 items-center">
           <img
@@ -32,33 +32,34 @@ const Blog = ({ blog, handleReadTime, handleBookmark }) => {
             alt="Profile Image"
           />
           <div className="flex flex-col text-left gap-2">
-            <h4 className="md:text-2xl text-lg font-bold">{blog.authorName}</h4>
-            <p className="text-gray-400">
-              {" "}
+            <h4 className="lg:text-2xl md:text-xl text-lg font-bold">
+              {blog.authorName}
+            </h4>
+            <p className="text-gray-400 md:text-base text-sm">
               {formatedDate} ({daysPassed} Days ago)
             </p>
           </div>
         </div>
 
         {/* Blog duration and Bookmark */}
-        <div>
-          <p className="text-gray-400 text-lg">
+        <div className="">
+          <p className="text-gray-400 lg:text-lg text-base">
             {blog.readTime / 10 < 1 ? "0" + blog.readTime : blog.readTime} min
             read{" "}
             <FontAwesomeIcon
-              className="ml-2 fa-lg"
+              className="md:ml-2 sm:ml-4 ml-2 fa-lg"
               onClick={() => handleBookmark(blog.blogTitle)}
               icon={faBookmark}
             />
           </p>
         </div>
       </div>
-      <h3 className="md:text-4xl text-2xl font-bold text-left my-5">
+      <h3 className="lg:text-4xl md:text-2xl text-xl font-bold text-left md:my-5 my-3">
         {blog.blogTitle}
       </h3>
 
       {/* Tags section */}
-      <div className="flex gap-3 mb-5 text-gray-400 text-lg">
+      <div className="flex gap-3 md:mb-5 mb-3 text-gray-400 lg:text-lg md:text-base">
         {blog.tags.map((tag) => (
           <p>#{tag}</p>
         ))}
@@ -66,12 +67,12 @@ const Blog = ({ blog, handleReadTime, handleBookmark }) => {
 
       {/* Mark as read button */}
       <h6
-        className="text-purple-500 underline underline-offset-2 hover:text-purple-400 cursor-pointer text-xl font-semibold text-left"
+        className="text-purple-500 underline underline-offset-2 hover:text-purple-400 cursor-pointer lg:text-xl md:text-lg font-semibold text-left"
         onClick={() => handleReadTime(blog.readTime)}
       >
         Mark as read
       </h6>
-      <hr className="border my-8" />
+      <hr className="border md:my-8 my-5" />
     </div>
   );
 };
