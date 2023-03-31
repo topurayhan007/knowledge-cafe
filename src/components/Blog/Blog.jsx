@@ -1,13 +1,25 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 
 const Blog = ({ blog }) => {
   console.log(blog);
+  const publishDate = blog.publishDate;
+
+  const formatedDate = new Date(publishDate)
+    .toLocaleString("default", { month: "short", day: "numeric" })
+    .replace(/ /g, " ");
+  const timeNow = new Date();
+  const publish = new Date(publishDate);
+  const difference = timeNow.getTime() - publish.getTime();
+  const daysPassed = Math.ceil(difference / (1000 * 3600 * 24));
+
   return (
     <div>
       {/* Blog Image */}
       <img
         className="w-full object-cover rounded-lg"
-        src="https://t4.ftcdn.net/jpg/02/18/74/91/360_F_218749112_UsyOUMEp3R2Gfmp481PrC2lA22y2G7hb.webp"
+        src={blog.blogCoverImg}
         alt=""
       />
       {/* Info Section */}
@@ -16,12 +28,15 @@ const Blog = ({ blog }) => {
         <div className="flex gap-6 items-center">
           <img
             className="md:w-14 w-12 md:h-14 h-12 object-cover rounded-full"
-            src="profile-pic.jpg"
+            src={blog.authorImg}
             alt="Profile Image"
           />
           <div className="flex flex-col text-left gap-2">
             <h4 className="md:text-2xl text-lg font-bold">{blog.authorName}</h4>
-            <p className="text-gray-400">Mar 14 (4 Days ago)</p>
+            <p className="text-gray-400">
+              {" "}
+              {formatedDate} ({daysPassed} Days ago)
+            </p>
           </div>
         </div>
 
@@ -29,18 +44,19 @@ const Blog = ({ blog }) => {
         <div>
           <p className="text-gray-400 text-lg">
             {blog.readTime / 10 < 1 ? "0" + blog.readTime : blog.readTime} min
-            read
+            read <FontAwesomeIcon className="ml-2 fa-lg" icon={faBookmark} />
           </p>
         </div>
       </div>
       <h3 className="md:text-4xl text-2xl font-bold text-left my-5">
-        How to get your first job as a self-taught programmer
+        {blog.blogTitle}
       </h3>
 
       {/* Tags section */}
       <div className="flex gap-3 mb-5 text-gray-400 text-lg">
-        <p>#beginners</p>
-        <p>#beginners</p>
+        {blog.tags.map((tag) => (
+          <p>#{tag}</p>
+        ))}
       </div>
 
       {/* Mark as read button */}

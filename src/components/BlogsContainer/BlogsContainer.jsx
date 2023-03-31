@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Blog from "../Blog/Blog";
-import Bookmark from "../Bookmark/Bookmark";
 import BookmarksContainer from "../BookmarksContainer/BookmarksContainer";
 
 const BlogsContainer = () => {
@@ -10,7 +9,7 @@ const BlogsContainer = () => {
     fetch("blogs.json")
       .then((res) => res.json())
       .then((data) => setBlogs(data));
-  }, []);
+  }, [blogs]);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">

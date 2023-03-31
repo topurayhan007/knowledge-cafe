@@ -6,8 +6,6 @@ import Header from "./components/Header/Header";
 import BlogsContainer from "./components/BlogsContainer/BlogsContainer";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="App md:px-0 px-2">
       <Header></Header>
