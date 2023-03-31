@@ -1,7 +1,7 @@
 import React from "react";
 import Bookmark from "../Bookmark/Bookmark";
 
-const BookmarksContainer = ({ readTime }) => {
+const BookmarksContainer = ({ readTime, bookmarks }) => {
   return (
     <div>
       {/* Total time spent section */}
@@ -18,11 +18,7 @@ const BookmarksContainer = ({ readTime }) => {
         </h5>
 
         {/* Bookmarks */}
-        <div>
-          <Bookmark></Bookmark>
-          <Bookmark></Bookmark>
-          <Bookmark></Bookmark>
-        </div>
+        <div></div>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 
-const Blog = ({ blog, handleReadTime }) => {
+const Blog = ({ blog, handleReadTime, handleBookmark }) => {
   // console.log(blog);
   const publishDate = blog.publishDate;
 
@@ -65,7 +65,10 @@ const Blog = ({ blog, handleReadTime }) => {
       </div>
 
       {/* Mark as read button */}
-      <h6 className="text-purple-500 underline underline-offset-2 hover:text-purple-400 cursor-pointer text-xl font-semibold text-left">
+      <h6
+        className="text-purple-500 underline underline-offset-2 hover:text-purple-400 cursor-pointer text-xl font-semibold text-left"
+        onClick={() => handleBookmark(blog.blogTitle)}
+      >
         Mark as read
       </h6>
       <hr className="border my-8" />
