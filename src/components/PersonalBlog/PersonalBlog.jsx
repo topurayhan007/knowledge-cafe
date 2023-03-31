@@ -53,10 +53,10 @@ const PersonalBlog = () => {
           <hr class="my-3" />
           <div class="flex items-center">
             <p class="mx-11 text-start">
-              If we want to bring any change to any element or anything react
+              If we want to bring any change to any element or anything, react
               does not allow you to do that, even if it is an event handle. For
               the change to take place in the DOM, react uses things called
-              hooks and
+              hooks, and
               <code class="bg-purple-50 p-1 rounded font-bold">
                 'useState()'
               </code>
@@ -115,9 +115,9 @@ const PersonalBlog = () => {
               creates a JavaScript representation of the entire DOM know as
               vitual DOM and assigns unique key to each element to keep track,
               whenever there's any change React uses "diffing" algorithm to
-              pinpoint which element has undergo change matching the vitual DOM
-              with the actual DOM using the keys and updates that element only
-              and re rendering it with re rendering the whole DOM.
+              pinpoint which element has undergo change by matching the vitual
+              DOM with the actual DOM using the keys and updates that element
+              only and re-renders it without re-rendering the whole DOM.
             </p>
           </div>
         </div>
