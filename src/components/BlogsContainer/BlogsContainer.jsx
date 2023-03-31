@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Blog from "../Blog/Blog";
 import BookmarksContainer from "../BookmarksContainer/BookmarksContainer";
 
-const BlogsContainer = () => {
+const BlogsContainer = ({ showToastMessage }) => {
   const [blogs, setBlogs] = useState([]);
   const [readTime, setReadTime] = useState(0);
   const [bookmarks, setBookmarks] = useState([]);
@@ -28,6 +28,7 @@ const BlogsContainer = () => {
     } else {
       // Show toast
       console.log("already");
+      showToastMessage();
     }
   };
   console.log(bookmarks);
