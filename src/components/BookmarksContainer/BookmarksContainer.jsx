@@ -14,11 +14,15 @@ const BookmarksContainer = ({ readTime, bookmarks }) => {
       {/* Bookmark Section */}
       <div className="rounded-lg bg-gray-100 p-8">
         <h5 className="text-xl font-bold text-left mb-4">
-          Bookmarked Blogs : 8
+          Bookmarked Blogs : {bookmarks.length}
         </h5>
 
         {/* Bookmarks */}
-        <div></div>
+        <div>
+          {bookmarks.map((bookmark) => (
+            <Bookmark title={bookmark}></Bookmark>
+          ))}
+        </div>
       </div>
     </div>
   );
